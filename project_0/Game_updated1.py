@@ -1,33 +1,39 @@
 import numpy as np
 
 def random_predict(number:int=1) -> int:
-    """Quantity of trying to find number
+    """Угадываем число
 
     Args:
-        number (int, optional): Finding number. Defaults to 1.
+        number (int, optional): Загаданное число. Defaults to 1.
 
     Returns:
-        int: Quantity of tries
+        int: Кол-во попыток
     """
     count = 0
 
     while True:
-        count += 1
+        count += 10
         predict_number = np.random.randint(1, 101) # предполагаемое число
-        if number == predict_number:
+        if predict_number < 50:
+            count -= 1
+            number == predict_number
             break # выход из цикла, если угадали
+        elif predict_number > 50:
+            count += 1
+            number == predict_number
+            break
     return(count)
 
 print(f'Количество попыток: {random_predict()}')
 
 def score_game(random_predict) -> int:
-    """1000 tries
+    """1000 Попыток
 
     Args:
-        random_predict (_type_): Function found
+        random_predict (_type_): Функция нахождения
 
     Returns:
-        int: Average tries
+        int: Среднее кол-во попыток
     """ 
     count_ls = [] # список для сохранения количества попыток
     np.random.seed(1) # фиксируем сид для воспроизводимости
