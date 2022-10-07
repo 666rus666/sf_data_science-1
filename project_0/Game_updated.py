@@ -1,7 +1,7 @@
 import numpy as np
 
 def random_predict(number:int=1) -> int:
-    """Quantity of trying to find number
+    """Кол-во попыток в нахождении случайного числа
 
     Args:
         number (int, optional): Finding number. Defaults to 1.
